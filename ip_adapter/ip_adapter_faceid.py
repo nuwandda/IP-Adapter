@@ -126,6 +126,7 @@ class IPAdapterFaceID:
         self.torch_dtype = torch_dtype
 
         self.pipe = sd_pipe.to(self.device)
+        self.pipe.enable_sequential_cpu_offload()
         self.set_ip_adapter()
 
         # image proj model
